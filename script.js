@@ -4,10 +4,17 @@ const nav = document.getElementById('siteNav');
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
+    const isOpen = nav.classList.contains('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
   });
 
   nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => nav.classList.remove('open'));
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+    });
   });
 }
 
