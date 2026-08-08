@@ -210,10 +210,18 @@
           <p class="eyebrow">Gallery</p>
           <h2>Moments from our work and activities</h2>
           <div class="gallery-grid">
-            <img src="https://nashamuktinagpur.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-22-at-10.29.52-PM-1024x768.jpeg" alt="Gallery image 1" />
-            <img src="https://nashamuktinagpur.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-22-at-10.29.51-PM-1024x768.jpeg" alt="Gallery image 2" />
-            <img src="https://nashamuktinagpur.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-22-at-10.29.48-PM-1024x768.jpeg" alt="Gallery image 3" />
-            <img src="https://nashamuktinagpur.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-22-at-10.29.47-PM-1024x768.jpeg" alt="Gallery image 4" />
+            <button class="gallery-item" type="button" aria-label="Open activity photo 1">
+              <img src="https://nashamuktinagpur.com/wp-content/uploads/2016/01/WhatsApp-Image-2025-02-06-at-14.42.44_a99005ea-1536x1152-1.jpg" alt="Activity at Vyakti Nirman Wellness Center" loading="lazy" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Open activity photo 2">
+              <img src="https://nashamuktinagpur.com/wp-content/uploads/2016/01/WhatsApp-Image-2025-02-06-at-14.42.44_6c9f635f-1536x1152-1.jpg" alt="Wellness center activity" loading="lazy" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Open center photo">
+              <img src="https://nashamuktinagpur.com/wp-content/uploads/2025/07/3.png" alt="Vyakti Nirman center" loading="lazy" />
+            </button>
+            <button class="gallery-item" type="button" aria-label="Open center building photo">
+              <img src="assets/center-building.png" alt="Vyakti Nirman Wellness Center building" loading="lazy" />
+            </button>
           </div>
         </div>
       </section>
@@ -311,6 +319,11 @@
     <div class="mobile-call-bar">
       <a class="btn btn-whatsapp" href="https://wa.me/917972435258" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="btn btn-primary" href="tel:+917972435258">📞 Call Now</a>
+    </div>
+
+    <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Image preview" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
+      <img id="lightboxImage" src="" alt="" />
     </div>
 
     <script src="script.js"></script>

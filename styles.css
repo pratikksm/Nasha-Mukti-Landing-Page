@@ -422,12 +422,29 @@ a {
   box-shadow: 0 20px 40px rgba(67, 92, 72, 0.14);
 }
 
-.gallery-grid img {
+.gallery-item {
+  appearance: none;
+  cursor: zoom-in;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 18px 40px rgba(67, 92, 72, 0.1);
+}
+
+.gallery-item img {
   transition: transform 0.35s ease;
 }
 
-.gallery-grid img:hover {
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
   transform: scale(1.03);
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .centers-grid li {
@@ -546,8 +563,42 @@ a {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 1.2rem;
-  box-shadow: 0 18px 40px rgba(67, 92, 72, 0.1);
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(25, 34, 27, 0.9);
+}
+
+.gallery-lightbox.is-open {
+  display: grid;
+}
+
+.gallery-lightbox img {
+  max-width: min(100%, 1050px);
+  max-height: calc(100vh - 3rem);
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--primary-dark);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .contact-list {
@@ -628,12 +679,95 @@ a {
 }
 
 @media (max-width: 560px) {
+  .container {
+    width: min(100% - 1.25rem, 1120px);
+  }
+
+  .top-bar__inner {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.45rem 0;
+  }
+
+  .top-bar a:last-child {
+    overflow-wrap: anywhere;
+  }
+
+  .nav-wrap {
+    padding: 0.7rem 0;
+  }
+
+  .brand {
+    gap: 0.55rem;
+    font-size: 1rem;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .site-nav {
+    left: 0.625rem;
+    right: 0.625rem;
+    min-width: 0;
+  }
+
   .top-bar__inner {
     font-size: 0.85rem;
   }
 
   .hero {
-    padding-top: 2.5rem;
+    padding: 2.25rem 0 2.75rem;
+  }
+
+  .hero__content {
+    gap: 2rem;
+  }
+
+  .hero__lead {
+    font-size: 1rem;
+  }
+
+  .hero__card {
+    border-width: 5px;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-grid,
+  .contact-grid {
+    gap: 1.3rem;
+  }
+
+  .info-card,
+  .contact-card,
+  .service-card,
+  .testimonial-card {
+    padding: 1.25rem;
+  }
+
+  .stats-strip {
+    padding: 2rem 0;
+  }
+
+  .stats-grid {
+    gap: 1.2rem 0.75rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .gallery-grid img {
+    height: 145px;
+  }
+
+  .footer-grid {
+    gap: 0.5rem;
   }
 
   .hero__actions {
