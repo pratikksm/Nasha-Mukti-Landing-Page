@@ -699,20 +699,47 @@ a {
     width: min(100% - 1.25rem, 1120px);
   }
 
-  .top-bar__inner {
-    display: flex;
-    justify-content: center;
-    padding: 0.38rem 0;
-    font-size: 0.8rem;
+  .site-header {
+    background: var(--cream);
+    box-shadow: 0 3px 18px rgba(67, 92, 72, 0.11);
   }
 
-  .top-bar__inner a:not(.topbar-call) {
+  .top-bar {
+    background: linear-gradient(100deg, #385640, var(--primary-dark));
+  }
+
+  .top-bar__inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 42px;
+    padding: 0.35rem 0;
+    font-size: 0.92rem;
+  }
+
+  .top-bar__inner > a:not(.topbar-call) {
     display: none;
   }
 
+  .topbar-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .topbar-call::after {
+    content: 'Free consultation';
+    padding-left: 0.55rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+
   .nav-wrap {
-    min-height: 64px;
-    padding: 0.55rem 0;
+    min-height: 72px;
+    padding: 0.65rem 0;
+    gap: 0.55rem;
   }
 
   .brand {
@@ -728,8 +755,11 @@ a {
   }
 
   .brand img {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
+    padding: 2px;
+    background: var(--white);
+    box-shadow: 0 3px 10px rgba(67, 92, 72, 0.12);
   }
 
   .site-nav {
@@ -744,6 +774,38 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    border-color: rgba(67, 92, 72, 0.2);
+    background: var(--white);
+  }
+
+  .nav-toggle span {
+    width: 22px;
+    height: 2px;
+    margin: 4px 0;
+    background: var(--primary-dark);
+  }
+
+  .nav-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    min-width: 58px;
+    min-height: 44px;
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.75rem;
+    box-shadow: none;
+    font-size: 0;
+  }
+
+  .nav-call::after {
+    content: 'Call';
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-toggle {
+    order: 3;
   }
 
   .top-bar__inner {
