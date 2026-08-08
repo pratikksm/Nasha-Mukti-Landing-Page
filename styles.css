@@ -769,20 +769,13 @@ a {
   }
 
   .nav-toggle {
-    min-width: 44px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-color: rgba(67, 92, 72, 0.2);
-    background: var(--white);
-  }
-
-  .nav-toggle span {
-    width: 22px;
-    height: 2px;
-    margin: 4px 0;
-    background: var(--primary-dark);
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    padding: 0.3rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
   .nav-call {
