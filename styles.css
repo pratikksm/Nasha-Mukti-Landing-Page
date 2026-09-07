@@ -96,6 +96,20 @@ a {
   border-radius: 50%;
 }
 
+.brand-mark {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--primary-dark);
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
 .site-nav {
   display: flex;
   gap: 1.4rem;
@@ -612,6 +626,40 @@ a {
   margin-top: 0.6rem;
 }
 
+.step-number {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  color: var(--accent-dark);
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.faq-wrap {
+  max-width: 850px;
+}
+
+.faq-wrap details {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  padding: 1rem 1.15rem;
+}
+
+.faq-wrap details + details {
+  margin-top: 0.75rem;
+}
+
+.faq-wrap summary {
+  cursor: pointer;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.faq-wrap details p {
+  margin: 0.8rem 0 0;
+}
+
 .contact-card {
   display: flex;
   flex-direction: column;
@@ -762,6 +810,12 @@ a {
     box-shadow: 0 3px 10px rgba(67, 92, 72, 0.12);
   }
 
+  .brand-mark {
+    width: 46px;
+    height: 46px;
+    box-shadow: 0 3px 10px rgba(67, 92, 72, 0.12);
+  }
+
   .site-nav {
     top: calc(100% + 0.25rem);
     left: 0.625rem;
@@ -889,4 +943,9 @@ a {
     padding: 0.85rem 0.6rem;
     font-size: 0.9rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
