@@ -36,3 +36,15 @@ if (enquiryForm) {
     enquiryForm.reset();
   });
 }
+
+const callDialog = document.getElementById('callDialog');
+if (callDialog) {
+  callDialog.querySelector('[data-close-call]').addEventListener('click', () => callDialog.close());
+  callDialog.addEventListener('click', (event) => {
+    if (event.target === callDialog) callDialog.close();
+  });
+
+  window.setTimeout(() => {
+    if (typeof callDialog.showModal === 'function' && !callDialog.open) callDialog.showModal();
+  }, 900);
+}
