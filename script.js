@@ -28,7 +28,7 @@ if (enquiryForm) {
     const name = String(data.get('name') || '').trim();
     const phone = String(data.get('phone') || '').trim();
     const message = String(data.get('message') || '').trim();
-    const text = ['Hello, I would like a private conversation about your lifestyle support services.', 'Name: ' + name, 'Phone: ' + phone, message ? 'Message: ' + message : ''].filter(Boolean).join('\\n');
+    const text = ['Hello, I would like information about your non-medical lifestyle guidance service.', 'Name: ' + name, 'Phone: ' + phone, message ? 'Message: ' + message : ''].filter(Boolean).join('\\n');
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'generate_lead', lead_method: 'whatsapp_form' });
